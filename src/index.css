@@ -8,10 +8,11 @@ body {
   min-height: 100vh;
   color: silver;
   font-family: Comfortaa;
+  overflow-x: hidden;
   background: rgb(37, 37, 37);
 }
 
-a, h1, h2, h3, h4, p {
+a, h1, h2, h3, h4{
   margin: 0;
 }
 

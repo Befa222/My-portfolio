@@ -3,37 +3,43 @@
     --clr-neonWhite: hsl(104, 100%, 88%);
     --clr-neonOff: rgb(32, 32, 32);
     --clr-bg: rgb(37, 37, 37);
+    --clr-break: rgb(209, 0, 209);
+    --clr-breakWhite: rgb(255, 67, 255);
 }
 
 header {
     width: 100vw;
     height: 90vh;
-    border: 1px solid red;
+    margin-bottom: 3em;
 }
 
 .neon-sign {
     position: relative;
+    top: 25%;
     width: min(85%, 50rem);
     margin: auto;
-    margin-top: 20vh;
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: clamp(1.5rem, 8vw, 5rem);
-    color: var(--clr-neonWhite);
-    border: 0.2em solid var(--clr-neon);
+    color: var(--clr-neonOff);
+    border: 0.2em solid var(--clr-neonOff);
     border-radius: 0.5em;
-    box-shadow: 0 0 0.08em white, 0 0 0.2em 0.1em var(--clr-neon), inset 0 0 0.08em white, inset 0 0 0.2em 0.1em var(--clr-neon);
+    animation: neonSign 2s forwards;
+    animation-delay: 4s;
 }
-.neon-sign::before{
+
+.neon-sign::before {
     content: "";
     position: absolute;
-    background-color: var(--clr-neon);
-    top:110%;
-    left: 15%;
-    width: 70%;
+    top: 110%;
+    left: 25%;
+    width: 50%;
     height: 30%;
-    transform: perspective(1em) rotateX(40deg) scale(1, 0.2);
+    transform: rotateX(40deg) scale(1, 0.2);
+    -moz-transform: perspective(1em) rotateX(40deg) scale(1, 0.2);
     filter: blur(2em);
+    animation: neonSignShadow 2s forwards;
+    animation-delay: 4s;
 }
 
 #firstName {
@@ -44,6 +50,176 @@ header {
     margin-bottom: 1em;
 }
 
+.letter-F {
+    animation: F 5s forwards;
+    animation-delay: 1s;
+}
+
+.letter-A {
+    transform: rotate(25deg);
+    animation: A 5s infinite;
+    animation-delay: 6s;
+}
+
+.letter-A::after {
+    content: "";
+    position: absolute;
+    top: 270%;
+    left: 180%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: perspective(1em) rotate(-25deg) scale(1, 0.3);
+    animation: shadowA 5s infinite;
+    animation-delay: 6s;
+}
+
+.letter-B {
+    animation: B 5s forwards;
+    animation-delay: 1s;
+}
+
+.letter-I {
+    color: var(--clr-neon);
+    text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+}
+
+.letter-E {
+    animation: F 3s forwards;
+    animation-delay: 2s;
+}
+
+.letter-N {
+    animation: A 3s forwards;
+    animation-delay: 2s;
+}
+
 #lastName {
     text-align: center;
+    animation: lastName 2s forwards;
+    animation-delay: 3s;
+}
+
+.intro-break {
+    position: absolute;
+    left: 20%;
+    top: 90vh;
+    width: 60%;
+    border: 0.01rem solid var(--clr-breakWhite);
+    box-shadow: 0 0 0.5em 0.2em var(--clr-break);
+}
+.about-me{
+    border: 1px solid yellow;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.about-me h2, .about-me h3 {
+    color: var(--clr-neon);
+    text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+}
+
+.about-me h2 {
+    font-size: 2rem;
+}
+
+.about-me p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.about-me h3 {
+    font-size: 1.5rem;
+}
+
+.about-me-break {
+    position: relative;
+    left: 20%;
+    top: 3rem;
+    width: 60%;
+    border: 0.01rem solid rgb(255, 67, 255);
+    box-shadow: 0 0 0.5em 0.2em rgb(209, 0, 209);
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+    .neon-sign {
+        width: 50%;
+        font-size: 2rem;
+        top: 10vh;
+    }
+}
+
+@keyframes neonSign {
+    0%, 90% {
+        border: 0.2em solid var(--clr-neonOff);
+        box-shadow: none;
+    }
+    91%, 100% {
+        border: 0.2em solid var(--clr-neon);
+        box-shadow: 0 0 0.08em white, 0 0 0.2em 0.1em var(--clr-neon), inset 0 0 0.08em white, inset 0 0 0.2em 0.1em var(--clr-neon);
+    }
+}
+
+@keyframes neonSignShadow {
+    0%, 90% {
+        background-color: var(--clr-bg);
+    }
+    91%, 100% {
+        background-color: var(--clr-neon);
+    }
+}
+
+@keyframes lastName {
+    0%, 90% {
+        color: var(--clr-neonOff);
+        text-shadow: none;
+    }
+    91%, 100% {
+        color: var(--clr-neon);
+        text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+    }
+}
+
+@keyframes F {
+    0%, 9%, 20%, 24%, 50%, 89% {
+        color: var(--clr-neonOff);
+        text-shadow: none
+    }
+    10%, 25%, 49%, 90%, 100% {
+        color: var(--clr-neon);
+        text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+    }
+}
+
+@keyframes A {
+    0%, 2%, 15%, 19%, 31%, 50% {
+        color: var(--clr-neonOff);
+        text-shadow: none
+    }
+    3%, 14%, 20%, 30%, 51%, 100% {
+        color: var(--clr-neon);
+        text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+    }
+}
+
+@keyframes shadowA {
+    0%, 2%, 15%, 19%, 31%, 50% {
+        background: none;
+        filter: blur(0.4em)
+    }
+    3%, 14%, 20%, 30%, 51%, 100% {
+        background: var(--clr-neon);
+        filter: blur(0.4em)
+    }
+}
+
+@keyframes B {
+    0%, 49%, 60%, 64%, 70%, 100% {
+        color: var(--clr-neon);
+        text-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon);
+    }
+    50%, 59%, 65%, 69% {
+        color: var(--clr-neonOff);
+        text-shadow: none
+    }
 }
