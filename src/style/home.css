@@ -100,7 +100,7 @@ header {
     animation-delay: 3s;
 }
 
-.intro-break {
+.header-break {
     position: absolute;
     left: 20%;
     top: 90vh;
@@ -108,8 +108,9 @@ header {
     border: 0.01rem solid var(--clr-breakWhite);
     box-shadow: 0 0 0.5em 0.2em var(--clr-break);
 }
-.about-me{
-    border: 1px solid yellow;
+
+.about-me {
+
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -137,17 +138,167 @@ header {
     left: 20%;
     top: 3rem;
     width: 60%;
-    border: 0.01rem solid rgb(255, 67, 255);
-    box-shadow: 0 0 0.5em 0.2em rgb(209, 0, 209);
+    border: 0.01rem solid var(--clr-breakWhite);
+    box-shadow: 0 0 0.5em 0.2em var(--clr-break);
 }
 
+.projects {
+    margin-top: 6rem;
+    height: 120vh;
+}
+
+.projects h1 {
+    width: 65%;
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    color: var(--clr-neonOff);
+    border: 0.15em solid var(--clr-neon);
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon), inset 0 0 0.1em var(--clr-neonWhite), inset 0 0 0.3em var(--clr-neon);
+    animation: A 5s infinite;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
+}
+
+.project1, .project2, .project3, .project4 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    border: 0.2em solid white;
+    box-shadow: 0 0 0.4em 0.1em silver;
+}
+
+.project1 {
+    background-image: url('../images/weather.jpg');
+    background-position: 100% 40%;
+}
+
+.project2 {
+    background-image: url('../images/jc1.jpg');
+    background-position: 100% 64%;
+}
+
+.project3 {
+    background-image: url('../images/hackathon1.jpg');
+}
+
+.project4 {
+    background-image: url('../images/wildUniverse.jpg');
+    background-position: 90% 100%;
+}
+
+footer {
+    margin-top: 3em;
+}
+
+.footer-break-top {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    border: 0.01rem solid var(--clr-breakWhite);
+    box-shadow: 0 0 0.5em 0.2em var(--clr-break);
+}
+
+footer h1 {
+    width: 90%;
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    color: var(--clr-neonOff);
+    border: 0.15em solid var(--clr-neon);
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon), inset 0 0 0.1em var(--clr-neonWhite), inset 0 0 0.3em var(--clr-neon);
+    animation: A 5s infinite;
+}
+
+.links-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+footer img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.footer-break-bottom {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    border: 0.01rem solid var(--clr-breakWhite);
+    box-shadow: 0 0 0.5em 0.2em var(--clr-break);
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+/*/////////////////// MOBILE LANDSCAPE MODE //////////////////////////*/
+
 @media (orientation: landscape) and (max-width: 900px) {
+    header {
+        height: 110vh;
+    }
     .neon-sign {
         width: 50%;
         font-size: 2rem;
         top: 10vh;
     }
+    .header-break {
+        top: 110vh;
+    }
+    .projects {
+        height: 70vh;
+    }
+    .projects-container {
+        flex-direction: row;
+        height: 50vh;
+    }
+    .project1, .project2, .project3, .project4 {
+        width: 20vw;
+        height: 20vw;
+    }
 }
+
+/* ////////////////////// TABLETS LANSCAPE MODE ///////////////////////*/
+
+@media (orientation: landscape) and (min-width: 901px) {
+    .neon-sign {
+        width: 50%;
+        font-size: 3rem;
+        top: 10vh;
+    }
+    .projects {
+        height: 70vh;
+    }
+    .projects-container {
+        flex-direction: row;
+        height: 50vh;
+    }
+}
+
+/* ////////////////////// KEYFRAMES ////////////////////////// */
 
 @keyframes neonSign {
     0%, 90% {
