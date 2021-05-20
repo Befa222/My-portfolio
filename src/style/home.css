@@ -1,0 +1,49 @@
+:root {
+    --clr-neon: rgb(2, 255, 2);
+    --clr-neonWhite: hsl(104, 100%, 88%);
+    --clr-neonOff: rgb(32, 32, 32);
+    --clr-bg: rgb(37, 37, 37);
+}
+
+header {
+    width: 100vw;
+    height: 90vh;
+    border: 1px solid red;
+}
+
+.neon-sign {
+    position: relative;
+    width: min(85%, 50rem);
+    margin: auto;
+    margin-top: 20vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: clamp(1.5rem, 8vw, 5rem);
+    color: var(--clr-neonWhite);
+    border: 0.2em solid var(--clr-neon);
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.08em white, 0 0 0.2em 0.1em var(--clr-neon), inset 0 0 0.08em white, inset 0 0 0.2em 0.1em var(--clr-neon);
+}
+.neon-sign::before{
+    content: "";
+    position: absolute;
+    background-color: var(--clr-neon);
+    top:110%;
+    left: 15%;
+    width: 70%;
+    height: 30%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.2);
+    filter: blur(2em);
+}
+
+#firstName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#lastName {
+    text-align: center;
+}

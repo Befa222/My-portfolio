@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  color: silver;
+  font-family: Comfortaa;
+  background: rgb(37, 37, 37);
+}
+
+a, h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url('./fonts/Comfortaa-VariableFont_wght.ttf');
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-neonOff);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: rgb(209, 0, 209);
 }
