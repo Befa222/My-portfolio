@@ -110,7 +110,6 @@ header {
 }
 
 .about-me {
-
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -150,7 +149,7 @@ header {
 .projects h1 {
     width: 65%;
     margin: auto;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -162,11 +161,12 @@ header {
 }
 
 .projects-container {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 90%;
+    height: 85%;
 }
 
 .project1, .project2, .project3, .project4 {
@@ -199,6 +199,130 @@ header {
     background-position: 90% 100%;
 }
 
+.project-details {
+    position: fixed;
+    border-radius: 0.4em;
+    background: var(--clr-neonOff);
+    border: 0.1em solid white;
+    box-shadow: 0 0 0.2em 0.1em silver;
+    z-index: 11;
+    animation: openPopup 0.3s forwards;
+}
+
+.project-details h2 {
+    position: relative;
+    top: 5%;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0 0 0.5em silver;
+    color: white;
+}
+
+.text-container, .text-container-universe {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    top: 57%;
+    height: 35%;
+    width: 90%;
+    left: 5%;
+}
+
+.text-container p, .text-container-universe p {
+    margin: 0;
+    animation: font 0.2s;
+}
+
+.text-container-universe {
+    top: 50%;
+    height: 40vh;
+}
+
+.tempera1, .tempera2, .tempera3, .tempera4, .art1, .art2, .art3, .art4, .weather-app, .universe {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.tempera1 {
+    background-image: url('../images/hackathon1.jpg');
+    z-index: 3;
+    animation: carousel1 10s infinite;
+}
+
+.tempera2 {
+    background-image: url('../images/hackathon2.jpg');
+    z-index: 2;
+    animation: carousel2 10s infinite;
+}
+
+.tempera3 {
+    background-image: url('../images/hackathon3.jpg');
+    z-index: 1;
+    animation: carousel3 10s infinite;
+}
+
+.tempera4 {
+    background-image: url('../images/hackathon4.jpg');
+    z-index: 1;
+    animation: carousel4 10s infinite;
+}
+
+.art1 {
+    background-image: url('../images/jc1.jpg');
+    z-index: 3;
+    animation: carousel1 10s infinite;
+}
+
+.art2 {
+    background-image: url('../images/jc2.jpg');
+    z-index: 2;
+    animation: carousel2 10s infinite;
+}
+
+.art3 {
+    background-image: url('../images/jc3.jpg');
+    z-index: 1;
+    animation: carousel3 10s infinite;
+}
+
+.art4 {
+    background-image: url('../images/jc4.jpg');
+    z-index: 1;
+    animation: carousel4 10s infinite;
+}
+
+.weather-app {
+    background-image: url('../images/weather.jpg');
+}
+
+.universe {
+    background-image: url('../images/wildUniverse.jpg');
+    top: 5%;
+}
+
+.netlify-button {
+    font-family: Comfortaa;
+    background: none;
+    color: var(--clr-neon);
+    font-size: 1.3rem;
+    text-shadow: 0 0 0.3em var(--clr-neon);
+    border: none;
+    border: 0.1em solid var(--clr-neon);
+    border-radius: 0.3em;
+    box-shadow: 0 0 0.3em var(--clr-neon), inset 0 0 0.3em var(--clr-neon);
+    padding: 0.4em 0.5em;
+    animation: A 5s infinite;
+}
+
 footer {
     margin-top: 3em;
 }
@@ -212,9 +336,9 @@ footer {
 }
 
 footer h1 {
-    width: 90%;
+    width: 75%;
     margin: auto;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
     margin-top: 3rem;
     padding-top: 0.25em;
@@ -232,7 +356,6 @@ footer h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-
 }
 
 footer img {
@@ -269,7 +392,7 @@ footer p {
         top: 110vh;
     }
     .projects {
-        height: 70vh;
+        height: 80vh;
     }
     .projects-container {
         flex-direction: row;
@@ -279,9 +402,25 @@ footer p {
         width: 20vw;
         height: 20vw;
     }
+    .tempera1, .tempera2, .tempera3, .tempera4, .art1, .art2, .art3, .art4, .weather-app{
+        top: 18%;
+        left: 2%;
+        width: 40%;
+        height: 80%;
+    }
+    .universe{
+        top: 30%;
+        left: -17%;
+    }
+    .text-container, .text-container-universe {
+        top: 6%;
+        left: 55%;
+        width: 40%;
+        height: 80%;
+    }
 }
 
-/* ////////////////////// TABLETS LANSCAPE MODE ///////////////////////*/
+/* ////////////////////// TABLETS LANDSCAPE MODE ///////////////////////*/
 
 @media (orientation: landscape) and (min-width: 901px) {
     .neon-sign {
@@ -298,7 +437,32 @@ footer p {
     }
 }
 
-/* ////////////////////// KEYFRAMES ////////////////////////// */
+/* ///////////////////////// DESKTOP /////////////////////////////// */
+
+@media (orientation: landscape) and (min-width: 1366px){
+    .project1, .project2, .project3, .project4 {
+        width: 20vw;
+        height: 20vw;
+    }
+    .tempera1, .tempera2, .tempera3, .tempera4, .art1, .art2, .art3, .art4, .weather-app{
+        top: 18%;
+        left: 2%;
+        width: 40%;
+        height: 80%;
+    }
+    .universe{
+        top: 30%;
+        left: -17%;
+    }
+    .text-container, .text-container-universe {
+        top: 6%;
+        left: 55%;
+        width: 40%;
+        height: 80%;
+    }
+}
+
+/* ////////////////////// KEYFRAMES NEONS ////////////////////////// */
 
 @keyframes neonSign {
     0%, 90% {
@@ -372,5 +536,92 @@ footer p {
     50%, 59%, 65%, 69% {
         color: var(--clr-neonOff);
         text-shadow: none
+    }
+}
+
+/* ////////////////// KEYFRAMES PROJECTS DETAILS ////////////////////// */
+
+@keyframes openPopup {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95vw;
+        height: 98vh
+    }
+}
+
+@keyframes font {
+    0%, 20% {
+        font-size: 0rem;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 0.9rem;
+    }
+}
+
+/* //////////////////////////// KEYFRAMES PROJECTS CAROUSEL /////////////////// */
+
+@keyframes carousel1 {
+    0%, 10%, 20%, 100% {
+        opacity: 1
+    }
+    21%, 90% {
+        opacity: 0;
+        z-index: -1;
+    }
+    91% {
+        opacity: 0.5
+    }
+    100% {
+        z-index: 3;
+    }
+}
+
+@keyframes carousel2 {
+    0%, 10%, 100% {
+        opacity: 0
+    }
+    21%, 41% {
+        opacity: 1
+    }
+    51% {
+        opacity: 0;
+        z-index: -1
+    }
+}
+
+@keyframes carousel3 {
+    0%, 40%, 100% {
+        opacity: 0
+    }
+    41%, 51%, 60% {
+        opacity: 1
+    }
+    61% {
+        opacity: 0;
+        z-index: -1
+    }
+}
+
+@keyframes carousel4 {
+    0%, 56%, 100% {
+        opacity: 0
+    }
+    60% {
+        opacity: 1;
+        z-index: 3
+    }
+    80%, 90% {
+        opacity: 1
     }
 }

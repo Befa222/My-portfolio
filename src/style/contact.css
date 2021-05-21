@@ -1,0 +1,83 @@
+.contact{
+    width: 100vw;
+    max-height: 100vh;
+
+}
+.contact h1{
+    width: 65%;
+    margin: auto;
+    margin-top: 1rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    text-align: center;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    color: var(--clr-neonOff);
+    border: 0.15em solid var(--clr-neon);
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon), inset 0 0 0.1em var(--clr-neonWhite), inset 0 0 0.3em var(--clr-neon);
+    animation: A 5s infinite;
+}
+form{
+    position: absolute;
+    top: 15vh;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 82vh;
+}
+label{
+    padding: 0.6em 1.1em;
+    color: var(--clr-neonOff);
+    border: 0.2em solid var(--clr-neonOff);
+    border-radius: 0.4em;
+    box-shadow: none;
+    animation: label 1s forwards;
+    animation-delay: 3s;
+}
+input, textarea{
+    color: white;
+    background-color: var(--clr-bg);
+    border: none;
+    border-radius: 0.5em;
+    animation: input 1s forwards;
+    animation-delay: 1.5s;
+}
+ .send-button{
+    font-size: 1.5rem;
+    padding: 0.6em 1.1em;
+    color: var(--clr-neonOff);
+    border: 0.15em solid var(--clr-neonOff);
+    animation: sendButton 1s forwards;
+    animation-delay: 4s;
+}
+
+/* ////////////////////// CONTACT MOBILE LANDSCAPE ///////////////// */
+
+@media (orientation: landscape) and (max-width: 900px) {
+.contact{
+    max-height: 200vh;
+}
+form{
+    height: 180%;
+}
+}
+
+
+/* ////////////////////// KEYFRAMES CONTACT /////////////////////////// */
+
+@keyframes label {
+    0% {color: var(--clr-neonOff);text-shadow: none; border: 0.2em solid var(--clr-neonOff); box-shadow: none;}
+    100% {color: white; text-shadow: 0 0 0.5em white; border: 0.2em solid white; box-shadow: 0 0 0.2em 0.06em white, inset 0 0 0.2em 0.06em white;}
+}
+
+@keyframes input {
+    0% {box-shadow: none;}
+    100% {box-shadow: 0 0 0.5em 0.1em white}
+}
+@keyframes sendButton {
+    0% {color: var(--clr-neonOff);text-shadow: none; border: 0.2em solid var(--clr-neonOff); box-shadow: none;}
+    100% {color: red; text-shadow: 0 0 0.07em rgb(255, 194, 194), 0 0 0.5em red; border: 0.15em solid red; box-shadow: 0 0 0.07em rgb(255, 194, 194), 0 0 0.5em red, inset 0 0 0.07em rgb(255, 194, 194), inset 0 0 0.5em red;}
+}
