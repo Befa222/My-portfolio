@@ -6,14 +6,14 @@
 .contact h1 {
     position: absolute;
     top: 5%;
-    width: 65%;
-    left: 17.5%;
+    width: 48%;
+    left: 26%;
     font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
     padding-top: 0.4em;
     padding-bottom: 0.4em;
     color: var(--clr-neonOff);
-    border: 0.15em solid var(--clr-neon);
+    border: 0.2em solid var(--clr-neon);
     border-radius: 0.4em;
     box-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon), inset 0 0 0.1em var(--clr-neonWhite), inset 0 0 0.3em var(--clr-neon);
     animation: A 5s infinite;
@@ -119,11 +119,39 @@ textarea {
     .contact {
         max-height: 200vh;
     }
+    .contact h1{
+        width: 23%;
+        left: 38.5%;
+        font-size: 1.6rem;
+    }
     form {
         height: 180%;
     }
+    .thanks-popup{
+        width: 60vw;
+        height: 90vh;
+        font-size: 1.5rem;
+    }
 }
+/* ////////////////////// CONTACT TABLETS LANDSCAPE ///////////////// */
 
+@media (orientation: landscape) and (min-width: 901px) {
+    
+    .thanks-popup{
+        width: 60vw;
+        height: 50vh;
+        font-size: 1.9rem;
+    }
+}
+/* ///////////////////////// LAPTOP /////////////////////////////// */
+
+@media (orientation: landscape) and (min-width: 1100px){
+    .contact h1{
+        font-size: 2rem;
+        width: 30%;
+        left: 35%;
+    }
+}
 /* ////////////////////// KEYFRAMES CONTACT /////////////////////////// */
 
 @keyframes contactName {
