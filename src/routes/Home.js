@@ -152,7 +152,7 @@ export default function Home() {
                     <Link to='./Contact'><img src={Email} alt='email-icon' /></Link>
                 </div>
                 <div className='footer-break-bottom'></div>
-                <p>'D2S./2021'</p>
+                <p>'./D2S/2021'</p>
             </footer>
         </div>
     )

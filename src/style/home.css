@@ -102,9 +102,9 @@ header {
 
 .header-break {
     position: absolute;
-    left: 20%;
+    left: 25vw;
     top: 90vh;
-    width: 60%;
+    width: 50vw;
     border: 0.01rem solid var(--clr-breakWhite);
     box-shadow: 0 0 0.5em 0.2em var(--clr-break);
 }
@@ -134,9 +134,9 @@ header {
 
 .about-me-break {
     position: relative;
-    left: 20%;
     top: 3rem;
-    width: 60%;
+    width: 50vw;
+    margin: auto;
     border: 0.01rem solid var(--clr-breakWhite);
     box-shadow: 0 0 0.5em 0.2em var(--clr-break);
 }
@@ -329,8 +329,8 @@ footer {
 
 .footer-break-top {
     position: relative;
-    left: 20%;
-    width: 60%;
+    width: 50vw;
+    margin: auto;
     border: 0.01rem solid var(--clr-breakWhite);
     box-shadow: 0 0 0.5em 0.2em var(--clr-break);
 }
@@ -365,8 +365,8 @@ footer img {
 
 .footer-break-bottom {
     position: relative;
-    left: 20%;
-    width: 60%;
+    width: 50vw;
+    margin: auto;
     border: 0.01rem solid var(--clr-breakWhite);
     box-shadow: 0 0 0.5em 0.2em var(--clr-break);
     margin-top: 5rem;
@@ -375,11 +375,12 @@ footer img {
 
 footer p {
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /*/////////////////// MOBILE LANDSCAPE MODE //////////////////////////*/
 
-@media (orientation: landscape) and (max-width: 900px) {
+@media (orientation: landscape){
     header {
         height: 110vh;
     }
@@ -437,12 +438,46 @@ footer p {
     }
 }
 
-/* ///////////////////////// DESKTOP /////////////////////////////// */
+/* ///////////////////////// LAPTOP /////////////////////////////// */
 
-@media (orientation: landscape) and (min-width: 1366px){
+@media (orientation: landscape) and (min-width: 1100px){
+    header{
+        height: 95vh;
+    }
+    .header-break{
+        top: 95vh;
+    }
+    .neon-sign{
+        width: 40%;
+        font-size: 3rem;
+    }
+    .about-me h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-me p {
+        font-size: 1.5rem;
+    }
+    
+    .about-me h3 {
+        font-size: 2rem;
+    }
+    .projects h1{
+        width: 20%;
+        font-size: 2.5rem;
+    }
     .project1, .project2, .project3, .project4 {
-        width: 20vw;
-        height: 20vw;
+        width: 15vw;
+        height: 15vw;
+        cursor: pointer;
+    }
+    .project1:hover, .project2:hover, .project3:hover, .project4:hover{
+        transform: scale(1.2);
+        transition-duration: 0.4s;
+    }
+    .project1:not(:hover), .project2:not(:hover), .project3:not(:hover), .project4:not(:hover){
+        transform: scale(1);
+        transition-duration: 0.4s;
     }
     .tempera1, .tempera2, .tempera3, .tempera4, .art1, .art2, .art3, .art4, .weather-app{
         top: 18%;
@@ -454,12 +489,65 @@ footer p {
         top: 30%;
         left: -17%;
     }
+    .project-details h2{
+        font-size: 2.5rem;
+    }
     .text-container, .text-container-universe {
-        top: 6%;
+        top: 20%;
         left: 55%;
         width: 40%;
-        height: 80%;
+        height: 60%;
+        font-size: 1.5rem;
     }
+    .netlify-button{
+        font-size: 1.5rem;
+    }
+    footer{
+        width: 100vw;
+        height: 70=5vh;
+    }
+    footer h1{
+        width: 30%;
+        font-size: 2.5rem;
+    }
+    .links-container{
+        height: 20vh;
+    }
+    footer img{
+        cursor: pointer;
+        transform: scale(1.3);
+    }
+    footer p{
+        font-size: 1rem;
+    }
+}
+/* ////////////////////// BIG SCREENS /////////////////////////////// */
+
+ @media (orientation: landscape) and (min-width: 1450px){
+
+.neon-sign{
+    font-size: 5rem;
+}
+.projects h1{
+    font-size: 3rem;
+}
+.project-details h2{
+    font-size: 4rem;
+}
+.text-container, .text-container-universe {
+    top: 25%;
+    left: 55%;
+    height: 50%;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+.netlify-button{
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+footer h1{
+    font-size: 3rem;
+}
 }
 
 /* ////////////////////// KEYFRAMES NEONS ////////////////////////// */

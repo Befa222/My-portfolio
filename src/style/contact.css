@@ -1,23 +1,25 @@
-.contact{
+.contact {
     width: 100vw;
     max-height: 100vh;
-
 }
-.contact h1{
+
+.contact h1 {
+    position: absolute;
+    top: 5%;
     width: 65%;
-    margin: auto;
-    margin-top: 1rem;
+    left: 17.5%;
     font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
     color: var(--clr-neonOff);
     border: 0.15em solid var(--clr-neon);
     border-radius: 0.4em;
     box-shadow: 0 0 0.1em var(--clr-neonWhite), 0 0 0.3em var(--clr-neon), inset 0 0 0.1em var(--clr-neonWhite), inset 0 0 0.3em var(--clr-neon);
     animation: A 5s infinite;
 }
-form{
+
+form {
     position: absolute;
     top: 15vh;
     left: 10%;
@@ -28,56 +30,143 @@ form{
     width: 80%;
     height: 82vh;
 }
-label{
+
+.contact-name, .contact-email {
+    font-family: Comfortaa;
+    height: 3rem;
+    text-align: center;
+    color: white;
+    background-color: var(--clr-bg);
+    border: 0.3em solid var(--clr-neonOff);
+    border-radius: 0.5em;
+    outline: none;
+}
+
+.contact-name {
+    color: rgb(0, 225, 255);
+    animation: contactName 0.4s forwards;
+    animation-delay: 0.5s;
+}
+
+.contact-email {
+    color: yellow;
+    animation: contactEmail 0.4s forwards;
+    animation-delay: 1s;
+}
+
+textarea {
+    outline: none;
+    text-align: center;
+    font-family: Comfortaa;
+    border: 0.3em solid var(--clr-neonOff);
+    border-radius: 0.5em;
+    padding: 1em 0.6em;
+    background-color: var(--clr-bg);
+    animation: textarea 0.4s forwards;
+    animation-delay: 1.5s;
+    color: rgb(255, 0, 255);
+}
+
+.send-button {
+    outline: none;
+    font-family: Comfortaa;
+    font-size: 1.5rem;
+    font-weight: 800;
     padding: 0.6em 1.1em;
     color: var(--clr-neonOff);
     border: 0.2em solid var(--clr-neonOff);
-    border-radius: 0.4em;
-    box-shadow: none;
-    animation: label 1s forwards;
-    animation-delay: 3s;
-}
-input, textarea{
-    color: white;
+    border-radius: 0.35em;
     background-color: var(--clr-bg);
-    border: none;
-    border-radius: 0.5em;
-    animation: input 1s forwards;
-    animation-delay: 1.5s;
+    animation: sendButton 0.4s forwards;
+    animation-delay: 2s;
 }
- .send-button{
-    font-size: 1.5rem;
-    padding: 0.6em 1.1em;
-    color: var(--clr-neonOff);
-    border: 0.15em solid var(--clr-neonOff);
-    animation: sendButton 1s forwards;
-    animation-delay: 4s;
+.thanks-popup{
+    font-family: Pacifico;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: clamp(1.1rem, 5.5vw, 3rem);
+    text-align: center;
+    border-radius: 0.4em;
+    background: var(--clr-neonOff);
+    border: 0.1em solid rgb(255, 0, 212);
+    box-shadow: 0 0 0.2em 0.1em rgb(255, 0, 212);
+    z-index: 11;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 40vh;
+}
+.thanks-popup h2{
+    color: rgb(255, 0, 212);
+    text-shadow:  0 0 0.2em black, 0 0 0.2em rgb(255, 0, 212);
+}
+.thanks-popup h3{
+    color: white;
+    text-shadow: 0 0 0.2em black,0 0 0.2em white;
+}
+.thanks-popup p{
+    color: red;
+    text-shadow: 0 0 0.2em black,0 0 0.2em red;
 }
 
 /* ////////////////////// CONTACT MOBILE LANDSCAPE ///////////////// */
 
 @media (orientation: landscape) and (max-width: 900px) {
-.contact{
-    max-height: 200vh;
+    .contact {
+        max-height: 200vh;
+    }
+    form {
+        height: 180%;
+    }
 }
-form{
-    height: 180%;
-}
-}
-
 
 /* ////////////////////// KEYFRAMES CONTACT /////////////////////////// */
 
-@keyframes label {
-    0% {color: var(--clr-neonOff);text-shadow: none; border: 0.2em solid var(--clr-neonOff); box-shadow: none;}
-    100% {color: white; text-shadow: 0 0 0.5em white; border: 0.2em solid white; box-shadow: 0 0 0.2em 0.06em white, inset 0 0 0.2em 0.06em white;}
+@keyframes contactName {
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        border: 0.3em solid rgb(0, 225, 255);
+        box-shadow: 0 0 0.5em 0.1em rgb(0, 225, 255), inset 0 0 0.5em 0.1em rgb(0, 225, 255);
+    }
 }
 
-@keyframes input {
-    0% {box-shadow: none;}
-    100% {box-shadow: 0 0 0.5em 0.1em white}
+@keyframes contactEmail {
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        border: 0.3em solid yellow;
+        box-shadow: 0 0 0.5em 0.1em yellow, inset 0 0 0.5em 0.1em yellow;
+    }
 }
+
+@keyframes textarea {
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        border: 0.3em solid rgb(255, 3, 255);
+        box-shadow: 0 0 0.5em 0.1em rgb(255, 0, 255), inset 0 0 0.5em 0.1em rgb(255, 1, 255);
+    }
+}
+
 @keyframes sendButton {
-    0% {color: var(--clr-neonOff);text-shadow: none; border: 0.2em solid var(--clr-neonOff); box-shadow: none;}
-    100% {color: red; text-shadow: 0 0 0.07em rgb(255, 194, 194), 0 0 0.5em red; border: 0.15em solid red; box-shadow: 0 0 0.07em rgb(255, 194, 194), 0 0 0.5em red, inset 0 0 0.07em rgb(255, 194, 194), inset 0 0 0.5em red;}
+    0% {
+        color: var(--clr-neonOff);
+        text-shadow: none;
+        border: 0.2em solid var(--clr-neonOff);
+        box-shadow: none;
+    }
+    100% {
+        color: rgb(255, 115, 0);
+        text-shadow: 0 0 0.07em rgb(255, 215, 182), 0 0 0.5em rgb(255, 115, 0);
+        border: 0.2em solid rgb(255, 115, 0);
+        box-shadow: 0 0 0.07em rgb(255, 215, 182), 0 0 0.5em rgb(255, 115, 0), inset 0 0 0.07em rgb(255, 215, 182), inset 0 0 0.5em rgb(255, 115, 0);
+    }
 }

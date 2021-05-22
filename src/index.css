@@ -12,13 +12,21 @@ body {
   background: rgb(37, 37, 37);
 }
 
-a, h1, h2, h3, h4{
+a, h1, h2, h3, h4 {
   margin: 0;
+}
+a{
+  text-decoration: none;
 }
 
 @font-face {
   font-family: Comfortaa;
   src: url('./fonts/Comfortaa-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Pacifico;
+  src: url('./fonts/Pacifico-Regular.ttf');
 }
 
 ::-webkit-scrollbar {
