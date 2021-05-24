@@ -26,3 +26,4 @@ $ yarn install
 - Keyframes
 - Hooks
 - React functional components
+- CSS
