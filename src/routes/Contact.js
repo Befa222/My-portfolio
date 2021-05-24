@@ -1,9 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 import '../style/contact.css';
 
 export default function Contact() {
+
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_42wcai8', 'template_pacrvr9', e.target, 'user_2GGglIWKLZaKHdfcHpWH0')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
 
     const [popup, setPopUp] = useState(false);
     const confirm = () => {
@@ -16,7 +28,7 @@ export default function Contact() {
     return (
         <section className='contact'>
             <h1>CONTACT ME</h1>
-            <form>
+            <form onSubmit={sendEmail}>
                 <input className='contact-name' type="text" name="_name" required placeholder='Your Name' />
                 <input className='contact-email' type="email" name="_email" required placeholder='Your email' />
                 <textarea rows="5" cols="30" name="message" required placeholder='Your message' />
